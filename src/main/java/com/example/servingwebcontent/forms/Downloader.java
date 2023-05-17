@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.net.MulticastSocket;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
@@ -50,11 +51,16 @@ public class Downloader implements Serializable {
     public Document doc;
     public String url;
 
-    public Downloader() throws IOException {
+    public Downloader() {
         this.executorService = Executors.newFixedThreadPool(5);
         this.urls = new LinkedList<>();
 
-        this.enderecoGrupo = InetAddress.getByName("239.255.255.1");
+        try {
+            this.enderecoGrupo = InetAddress.getByName("239.255.255.1");
+        } catch (UnknownHostException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         this.porta = Integer.parseInt("1234");
 
         this.multicastSocket = null;
@@ -306,10 +312,6 @@ public class Downloader implements Serializable {
         TCP tcpThread = new TCP(1111);
         Thread thread = new Thread(tcpThread);
         thread.start();
-
-        model.addAttribute("url", this.url);
-
-        Indexer(this.url);
     }
     
 }

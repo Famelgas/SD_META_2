@@ -13,10 +13,11 @@ import java.util.Scanner;
 public class User {
     private String username, password;
     public HashMap<String, String> users;
+    public Model model;
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public User() {
+        this.username = "";
+        this.password = "";
     }
 
     public String getUsername() {
@@ -44,7 +45,7 @@ public class User {
     }
 
     @GetMapping("/login")
-    public String login(Model model) {
+    public String login() {
         model.addAttribute("username", this.username);
         model.addAttribute("password", this.password);
         return "register and loged in";
