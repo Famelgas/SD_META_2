@@ -28,8 +28,13 @@ public class SearchModule extends UnicastRemoteObject{
     public HashMap<String, String> users;
     String message;
 
-    public SearchModule() throws RemoteException, NotBoundException {
-        this.barrel = (RMIStorageBarrel) LocateRegistry.getRegistry(2500).lookup("RMIStorageBarrel");
+    public SearchModule() throws RemoteException {
+        try {
+            this.barrel = (RMIStorageBarrel) LocateRegistry.getRegistry(2500).lookup("RMIStorageBarrel");
+        } catch (NotBoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         this.top_ten_words = new ArrayList<ArrayList<String>>();
         this.users = new HashMap<String, String>();
         this.message = "";

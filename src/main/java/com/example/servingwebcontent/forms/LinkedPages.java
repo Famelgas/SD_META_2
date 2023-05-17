@@ -42,12 +42,12 @@ import java.io.FileNotFoundException;
 
 import org.jsoup.nodes.Document;
 
-public class LinnkedPages {
+public class LinkedPages {
 
     public RMIStorageBarrel barrel;
 
 
-    public LinnkedPages() {
+    public LinkedPages() {
         this.barrel = null;
     }
 

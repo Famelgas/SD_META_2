@@ -1,5 +1,7 @@
 package com.example.servingwebcontent.forms;
 
+import java.rmi.*;
+
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,12 +12,6 @@ public class AdminPage {
     public int active_downloaders;
     public int active_barrels;
     public ArrayList<ArrayList<String>> top_ten_words;
-
-    public String see_admin_page() throws RemoteException {
-        String server_answer = admin_page();
-        return server_answer;
-    }
-
 
     public AdminPage() {
         this.barrel = null;
