@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #answer {
+            margin-top: 20px;
+        }
+
+        #send {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GOOGOL</h1>
+
+        <form action="/linked_pages" method="POST">
+            <input type="text" id="message" placeholder="Introduza um URL...">
+            <button id="send" type="submit">Pesquisar</button>
+        </form>
+        
+        <button onclick="back()">Voltar</button>
+
+        <table id="answer">...</table>
+    </div>
+    <script>
+        function back() {
+            // Redirect to another page
+            window.location.href = "/";
+        }
+    </script>
+
+</body>
+</html>

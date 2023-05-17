@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container button {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GOOGOL</h1>
+        <p>Selecione a opção que desejar</p>
+
+        <button onclick="login()">Login</button>
+
+        <button onclick="search_words()">Pesquisar</button>
+        
+        <button onclick="index_url()">Indexar URL</button>
+        
+        <button onclick="linked_pages()">Páginas com ligação a outra</button>
+        
+        <button onclick="admin_page()">Admin page</button>
+    
+    </div>
+
+    <script>
+        function login() {
+            // Redirect to another page
+            window.location.href = "/login";
+        }
+    </script>
+    
+    <script>
+        function search_words() {
+            // Redirect to another page
+            window.location.href = "/search";
+        }
+    </script>
+    <script>
+        function index_url() {
+            // Redirect to another page
+            window.location.href = "/index_url";
+        }
+    </script>
+
+    <script>
+        function linked_pages() {
+            // Redirect to another page
+            window.location.href = "/linked_pages";
+        }
+    </script>
+    <script>
+        function admin_page() {
+            // Redirect to another page
+            window.location.href = "/admin_page";
+        }
+    </script>
+</body>
+</html>

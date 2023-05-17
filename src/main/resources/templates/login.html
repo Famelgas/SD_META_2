@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #log {
+            margin-bottom: 10px;
+        }
+        #reg {
+            margin-bottom: 10px;
+        }
+        #username {
+            margin-bottom: 10px;
+        }
+        #password {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GOOGOL</h1>
+
+        <form action="/login" method="POST">
+            <input type="text" name="username" id="username" placeholder="Username...">
+            <input type="password" name="password" id="password" placeholder="Password...">
+            <button id="log" type="submit">Login</button>
+            <button id="reg" type="submit">Register</button>
+        </form>
+
+        <button onclick="back()">Voltar</button>
+
+    </div>
+
+    <script>
+        function back() {
+            // Redirect to another page
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>
